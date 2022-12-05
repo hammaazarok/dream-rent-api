@@ -86,6 +86,10 @@ test:
 #
 production:
   <<: *default
-  database: dream_rent_api_production
-  username: dream_rent_api
-  password: <%= ENV["DREAM_RENT_API_DATABASE_PASSWORD"] %>
+  url: <%= ENV["DATABASE_URL"] %>
+  host: <%= ENV["PGHOST"] %>
+  port: <%= ENV["PGPORT"] %>
+  database: <%= ENV["DATABASE_URL"] %>
+  username: <%= ENV["PGDATABASE"] %>
+  password: <%= ENV["PGPASSWORD"] %>
+  
